@@ -1,17 +1,20 @@
-# 1-1 Implement a recursive function to calculate the factorial of a given number.
+# Linear Search in Python
 
-def fact_rec(n):
 
- if n==0 or n==1:
+def linearSearch(array, n, x):
 
-   return 1
+  # Going through array sequencially
+  for i in range(0, n):
+    if (array[i] == x):
+      return i
+  return -1
 
- else:
 
-   return n*fact_rec(n-1)
-
-number = int(input("Enter a value :"))
-
-res = fact_rec (number)
-
-print("The factorial of{} is {}.||".format(number, res))
+array = [2, 4, 0, 1, 9]
+x = 1
+n = len(array)
+result = linearSearch(array, n, x)
+if (result == -1):
+  print("Element not found")
+else:
+  print("Element found at index: ", result)
